@@ -4,6 +4,9 @@ li {list-style: none;}
 a {text-decoration: none; color:inherit;}
 /* body태그에 color를 줘도 상속되는 것 color-inherit(상속) */
 img {border:none; vertical-align: top;}
+img,video {
+  max-width: 100%;
+}
 h1,h2,h3,h4,h5,h6 {font-size:100%; font-weight: normal;}
 em, address {font-style:normal;}
 strong {font-weight: normal;}
