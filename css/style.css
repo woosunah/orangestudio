@@ -211,13 +211,104 @@ body {
   /* radio버튼 화면 밖에 있음 눈에만 보이지 않게 함 */
 }
 
-#container .main-tabmenu-wrap input[type="radio"]:checked + label {
+#container .main-tabmenu-wrap input[type="radio"]:checked+label {
   /* input요소의 radio버튼이 checked되어있는 선택자에 속성주는 것 (공지사항 탭에 주황색) */
   background: #ff5d2b;
   color: #fff;
 }
 
-#container .main-gallery-wrap {
-  clear:both;
+#container .main-tabmenu-wrap input[type="radio"]:checked+label+div {
+  display:block;
+}
+/* 
+#container .main-tabmenu-wrap>div~div {
+  display: none;
+  /* dn */
+  /* div의 다음에 오는 형제요소를 숨김 */
+/* } */
+
+/* :checked가 되어있는 버튼만 보이게 하는 것 */
+/* 체크가 되어있는 라디오 버튼의 ul요소만 보이게 하기 */
+/* 공지사항 말고 이벤트를 클릭하면 공지사항의 체크드가 사라지고
+이벤트의 체크드가 활성화되니까 자동으로 밑의 '공지사항 관련된 내용입니다'가 사라짐 */
+
+#container .main-tabmenu-wrap>div {
+  display: none;
+  padding-top: 10px;
+  /* pt */
 }
 
+#container .main-tabmenu-wrap>div>ul>li {
+  height: 37px;
+  line-height: 37px;
+  position: relative;
+  padding-left: 23px;
+  padding-right: 75px;
+  /* ...의 간격pr로 주기  */
+  white-space: nowrap;
+  /* whs 글자 아래로 떨어짐 방지*/
+  overflow: hidden;
+  /* 글자가 넘치는건 숨겨라 */
+  text-overflow: ellipsis;
+  /* 글자 넘어갈 시 ...으로 원으로 만들어라 */
+
+}
+#container .main-tabmenu-wrap>div>ul>li:before {
+  content: '';
+  position: absolute;
+  left: 12px;
+  top: 18px;
+  width: 3px;
+  height: 3px;
+  background-color: #ff5d2b;
+  border-radius: 50%;
+  
+}
+#container .main-tabmenu-wrap>div>ul>li>span {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+
+#container .main-tabmenu-wrap .btn-more {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+}
+
+
+#container .main-gallery-wrap {
+  clear:both;
+  /* float해제 */
+  /* margin-top: 38px; float되어있는 떠있는 성질이라 마진 안먹힘*/
+  padding-top: 38px;
+}
+#container .main-gallery-wrap>ul {
+  overflow: hidden;
+  /* 이런 방법도 float해제 */
+  /* clear:both주면 두명아기사진 li의 요소들 
+  다음에 오는 요소가 없고, 
+  부모에 줄떈 오버플로우 히든을 줘야 플롯이 해제됨 
+  또는 가상요소를 줘야함 */
+}
+#container .main-gallery-wrap>ul>li {
+  float: left;
+  margin-left: 24px;
+  /* fl */
+}
+#container .main-gallery-wrap>ul>li:first-child {
+  margin-left: 0;
+}
+#container .main-gallery-wrap>ul>li>p+p {
+  margin-top: 22px;
+}
+#footer {
+  background-color: #fff;
+}
+
+#footer .inner-footer{
+  width: 1008px;
+  margin: 0 auto;
+  padding: 25px 18px;
+}
