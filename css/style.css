@@ -2,6 +2,7 @@
 @import url('reset.css');
 /* 바둑판 모양으로 해야 반응형 하기쉬움 각 사각형으로 해놓은뒤 사이즈 축소시, 밑으로 떨어뜨리기만 하면됨 */
 /* 태블릿 사이즈 - 가로 1024 세로 768 -pC버전 / 모바일버전만 만들어주면됨 */
+/* 스크립터 - 자바스크립트 넣어주는 사람 */
 
 body {
   font:14px/1.3 Malgun Gothic, "맑은고딕", AppleGothic, sans-serif;
@@ -343,6 +344,10 @@ max-width:720px(720px 이하에서)*/
   *[class*="mobile-"] {
     display: none; pc버전용
   } 아래에 작성하고 싶으면 이렇게 해야하지만 굳이 이렇게 하지말고 위의 주석처리 안한 형태로 사용*/ 
+  #header .sub-title {
+    left: 10px;
+    width: 98px;
+  }
   .mobile-btn-gnb-open {
     position: absolute;
     /* position은 인라인요소로 바뀜 */
@@ -374,11 +379,123 @@ max-width:720px(720px 이하에서)*/
   .mobile-btn-gnb-open::after {
     top: 8px;
   }
+
+  .mobile-btn-gnb-open.on + .gnb-wrap {
+    left: 0;
+  }
   #header .utilmenu {
     display: none;
   }
   .gnb-wrap {
+    position: fixed;
+    left: -200%;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ff5d2b;
+    color:#fff;
+    z-index: 100;
+    padding-top: 60px;
+    transition: all .3s ease-in;
+  }
+
+  .gnb-wrap .scroll-wrap {
+    height: 100%;
+    /* height값 꼭 넣어줘야함 (스크롤랩) */
+    overflow-y: auto;
+    /* 내용이 넘칠때 자동으로 스크롤바 생성 */
+  }
+  .mobile-btn-gnb-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 46px;
+    height: 46px;
+    background: #fff;
+    border-radius: 5px;
+    /* bdrs */ 
+    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    text-indent: -9999px;
+    /* 메뉴닫기 글자 밖으로 빠짐   */
     
   }
-  
+  .mobile-btn-gnb-close::before,
+  .mobile-btn-gnb-close::after {
+    content: '';
+    position: absolute;
+        /* gnb에 position:fixed를 해놔서 relative안해줘도됨 */
+    top: 50%;
+    left: 50%;
+    width: 40px;
+    height: 2px;
+    background-color: #ff5d2b;
+  }
+  .mobile-btn-gnb-close::before{
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+  .mobile-btn-gnb-close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  #gnb>li>a {
+    font-size: 20px;
+    display: block;
+    /* db */
+    /* text-align: center; 서브메뉴 펼쳐질것생각해서 좌측정렬*/
+    padding: 18px 15px;
+    border-bottom: 1px solid #fba186;
+    position: relative;
+  }
+  #gnb>li>a::before,
+  #gnb>li>a::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    width: 15px;
+    height: 2px;
+    background-color: #fff;
+  }
+  #gnb>li>a::after {
+    transform: rotate(90deg);
+  }
+  #gnb>li>a.on+ul {
+    display: block;
+  }
+  #gnb>li>a.on:after {
+    content: none;
+    /* +기호 클릭시, -로 변환 */
+  }
+  #gnb ul {
+    display: none;
+    /* 서브메뉴 숨기기 */
+    background-color: #fba186;
+    color:#333;
+    font-size: 17px;
+  }
+  #gnb ul>li>a {
+    display: block;
+    padding: 15px 15px 15px 30px;
+    border-bottom: 1px solid #fff;
+  }
+  #gnb ul>li:last-child>a {
+    border-bottom: none;
+  }
+  #container .main-slide-banner-wrap{
+    width: auto;
+    float:none;
+    margin-bottom: 38px;
+  }
+  #container .main-slide-banner-wrap .gallery-wrap {
+    display: block;
+  }
+  #container .main-slide-banner-wrap .gallery-wrap img {
+    max-width: none;
+    /* 원본 사이즈보다 늘어나지 않게 하도록 max-width값을 지운것 */
+    width: 100%;
+  }
+  #container .main-tabmenu-wrap{
+    width: auto;
+    float:none;
+  }
+
 }
