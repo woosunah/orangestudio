@@ -33,7 +33,8 @@
       <li><a href="#">Sitemap</a></li>
     </ul>
     <!-- <a href="#" class="mobile-btn-gnb-open"> -->
-      <a href="#" class="mobile-btn-gnb-open">
+      <a href="#" class="mobile-btn-gnb-open" onclick="this.classList.toggle('on')">
+        <!-- 클릭할 a요소 / .으로 접근은 객체 / 함수는() 둥근괄호 'toggle'-2가지기능하는것 'on'클래스 추가 - classList 클래스를 추가하고 삭제가능한 함수?(EX6부터나옴)-->
       <span>메뉴열기</span>
     </a>
     <!-- span태그로 감싼 이유는 ? 햄버거버튼 위에 막대기위랑 아래만 만들수 있으니까 중간에도 만들려고 모양내려고span으로사용 -->
@@ -69,7 +70,8 @@
             </ul></li>
         </ul>
       </div>
-      <a href="#" class="mobile-btn-gnb-close">메뉴닫기</a>
+      <a href="#" class="mobile-btn-gnb-close" onclick="document.querySelector('.mobile-btn-gnb-open').classList.remove('on')">메뉴닫기</a>
+      <!-- 클래스 제거 시, classList를 꼭 사용해야함 내장함수개념 -->
     </div>
   </header>
   <div id="container">

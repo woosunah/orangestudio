@@ -229,7 +229,9 @@ body {
   margin-left: 0;
 }
 #container .main-gallery-wrap>ul>li>p+p {
-  margin-top: 22px;
+  margin-top: 9.401709401709402%  /*22px;*/
+  /* 22/234*100 */
+
 }
 #footer {
   background-color: #fff;
@@ -344,6 +346,14 @@ max-width:720px(720px 이하에서)*/
   *[class*="mobile-"] {
     display: none; pc버전용
   } 아래에 작성하고 싶으면 이렇게 해야하지만 굳이 이렇게 하지말고 위의 주석처리 안한 형태로 사용*/ 
+  body {
+    background: none;
+    /* 주황색 gnb띠 없애기 */
+    background-color: #fff7e6;
+  }
+  #header {
+    margin-bottom: 0;
+  }
   #header .sub-title {
     left: 10px;
     width: 98px;
@@ -480,6 +490,9 @@ max-width:720px(720px 이하에서)*/
   #gnb ul>li:last-child>a {
     border-bottom: none;
   }
+  #container {
+    padding: 0 10px;
+  }
   #container .main-slide-banner-wrap{
     width: auto;
     float:none;
@@ -497,5 +510,21 @@ max-width:720px(720px 이하에서)*/
     width: auto;
     float:none;
   }
-
+  #container .main-gallery-wrap>ul>li {
+    margin-left: 0;
+    width: 50%;
+    /* 아래의 사진들 2단으로 떨어짐 */
+    text-align: center;
+    padding: 10px;
+    /* 이미지들끼리의 간격  */
+  }
+  #container .main-gallery-wrap>ul>li:nth-child(3) {
+    clear:both;
+  }
+  #footer {
+    text-align:center;
+  }
+  #footer .footer-info-1 {
+    display: none;
+  }
 }
