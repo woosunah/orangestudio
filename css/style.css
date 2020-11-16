@@ -255,6 +255,9 @@ body {
     top: 137px;
     left: 0;
     width: 100%;
+    /* background-color: #ff0; */
+    height: 47px;
+    /* mouseleave로 할땐 붙어있어야 마우스 호버 시 안사라지고 벗어나야 사라짐  */
   }
   #gnb ul {
     display:none;
