@@ -66,5 +66,6 @@ function gnbMenuFnc(element) {
 }
 $(function () {
   gnbMenuFnc($('#gnb'));
+  $('.main-slide-banner').bxSlider();
 });
 // 문서객체 다 불러온 뒤에, 불러와야하므로 $(function)써줘야함

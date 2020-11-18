@@ -272,12 +272,14 @@ body {
     margin-left: 15px;
   }
   #gnb ul >li:first-child {
-    margin-left: 0;
+    margin-left: 16px;
     /* 첫번째 submenu1-1 ml값 필요없으니까 0 */ 
+    
   }
   
   #gnb>li:nth-child(1) ul{
     /* display:block; */
+    
   }
   #gnb>li:nth-child(2) ul{
     /* display:block; */
