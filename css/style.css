@@ -1,39 +1,32 @@
 @charset "utf-8";
 @import url('reset.css');
-/* 바둑판 모양으로 해야 반응형 하기쉬움 각 사각형으로 해놓은뒤 사이즈 축소시, 밑으로 떨어뜨리기만 하면됨 */
-/* 태블릿 사이즈 - 가로 1024 세로 768 -pC버전 / 모바일버전만 만들어주면됨 */
-/* 스크립터 - 자바스크립트 넣어주는 사람 */
 
 body {
-  font:14px/1.3 Malgun Gothic, "맑은고딕", AppleGothic, sans-serif;
-  color:#777;
+  font: 14px/1.3 Malgun Gothic, '맑은고딕', AppleGothic, sans-serif;
+  color: #777;
   background: #fff7e6 url('../images/common/bg-body.png') repeat-x 0 0;
   min-width: 360px;
 }
 
 #wrap {
-  max-width:1008px;
+  max-width: 1008px;
   margin: 0 auto;
 }
 
 .skipmenu a {
   background: #000;
-  color:#fff;
+  color: #fff;
   position: fixed;
   left: 0;
   top: -9999px;
-  z-index:100;
+  z-index: 100;
   width: 100%;
   text-align: center;
-  /* tac */
   padding: 10px;
 }
 
 .skipmenu a:focus {
   top: 0;
-  /* tab키 누르면 이동하는걸 focus라고함 */
-  /* 마우스 대체 키보드 사용 시, 나오는 용도 - 화면상에선 안보여도
-  필수로 해줘야함 (접근성 준수)*/
 }
 
 #header {
@@ -59,17 +52,17 @@ body {
   right: 0;
 }
 
-#header .utilmenu>li {
-  float:left;
+#header .utilmenu > li {
+  float: left;
   margin-left: 24px;
   position: relative;
 }
 
-#header .utilmenu>li:first-child {
+#header .utilmenu > li:first-child {
   margin-left: 0;
 }
 
-#header .utilmenu>li::before {
+#header .utilmenu > li::before {
   content: '';
   position: absolute;
   top: 4px;
@@ -79,30 +72,25 @@ body {
   background-color: #ccc;
 }
 
-#header .utilmenu>li:first-child::before {
+#header .utilmenu > li:first-child::before {
   content: none;
 }
-
-
-
-
-
 
 #container {
   margin-bottom: 42px;
 }
 
 #container .main-slide-banner-wrap {
-  width: 62.79761904761905%;/*633px;*/
-  float:left;
+  width: 62.79761904761905%; /*633px;*/
+  float: left;
   position: relative;
 }
 
 #container .main-slide-banner-wrap .bx-pager {
   text-align: center;
   position: absolute;
-  bottom:20px;
-  left:0;
+  bottom: 20px;
+  left: 0;
   width: 100%;
 }
 #container .main-slide-banner-wrap .bx-pager-item {
@@ -111,13 +99,12 @@ body {
   height: 20px;
 }
 
-#container .main-slide-banner-wrap .bx-pager-item~.bx-pager-item {
+#container .main-slide-banner-wrap .bx-pager-item ~ .bx-pager-item {
   margin-left: 15px;
 }
 
-#container .main-slide-banner-wrap .bx-pager-link{
+#container .main-slide-banner-wrap .bx-pager-link {
   display: inline-block;
-  /* a태그 인라인 블럭이라서 너비값 높이값이 적용안됨? */
   width: 100%;
   height: 100%;
   border-radius: 50%;
@@ -135,7 +122,7 @@ body {
   left: 20px;
   width: 38px;
   height: 86px;
-  background:url('../images/main/btn-main-slide-prev.png')0 0 no-repeat;
+  background: url('../images/main/btn-main-slide-prev.png') 0 0 no-repeat;
   text-indent: -9999px;
   transform: translateY(-50%);
 }
@@ -146,22 +133,20 @@ body {
   right: 20px;
   width: 38px;
   height: 86px;
-  background:url('../images/main/btn-main-slide-next.png')0 0 no-repeat;
+  background: url('../images/main/btn-main-slide-next.png') 0 0 no-repeat;
   text-indent: -9999px;
   transform: translateY(-50%);
 }
 
-#container .main-tabmenu-wrap { 
+#container .main-tabmenu-wrap {
   width: 35.91269841269841%; /*362px;*/
   height: 330px;
   border-radius: 10px;
   border: 1px solid #ff7800;
   background-color: #fff;
-  /* bgc */
   float: right;
   padding: 15px 10px 0;
   position: relative;
-  /* tab menu 이벤트 공지사항 옆으로 이동하기 위해 position:relative함 */
 }
 
 #container .main-tabmenu-wrap label {
@@ -170,68 +155,46 @@ body {
   height: 28px;
   line-height: 28px;
   background: #e5e1e1;
-  text-align:center;
-  /* tac */
+  text-align: center;
   color: #a6a6a6;
 }
 
-
-/* tab menu 이벤트 공지사항 옆으로 이동하기 위해 */
 #container .main-tabmenu-wrap label:nth-of-type(2) {
   position: absolute;
   top: 15px;
   left: 94px;
 }
 
-#container .main-tabmenu-wrap input[type="radio"] {
+#container .main-tabmenu-wrap input[type='radio'] {
   position: absolute;
   left: -9999px;
-  /* radio버튼 화면 밖에 있음 눈에만 보이지 않게 함 */
 }
 
-#container .main-tabmenu-wrap input[type="radio"]:checked+label {
-  /* input요소의 radio버튼이 checked되어있는 선택자에 속성주는 것 (공지사항 탭에 주황색) */
+#container .main-tabmenu-wrap input[type='radio']:checked + label {
   background: #ff5d2b;
   color: #fff;
 }
 
-#container .main-tabmenu-wrap input[type="radio"]:checked+label+div {
-  display:block;
+#container .main-tabmenu-wrap input[type='radio']:checked + label + div {
+  display: block;
 }
-/* 
-#container .main-tabmenu-wrap>div~div {
-  display: none;
-  /* dn */
-  /* div의 다음에 오는 형제요소를 숨김 */
-/* } */
 
-/* :checked가 되어있는 버튼만 보이게 하는 것 */
-/* 체크가 되어있는 라디오 버튼의 ul요소만 보이게 하기 */
-/* 공지사항 말고 이벤트를 클릭하면 공지사항의 체크드가 사라지고
-이벤트의 체크드가 활성화되니까 자동으로 밑의 '공지사항 관련된 내용입니다'가 사라짐 */
-
-#container .main-tabmenu-wrap>div {
+#container .main-tabmenu-wrap > div {
   display: none;
   padding-top: 10px;
-  /* pt */
 }
 
-#container .main-tabmenu-wrap>div>ul>li {
+#container .main-tabmenu-wrap > div > ul > li {
   height: 37px;
   line-height: 37px;
   position: relative;
   padding-left: 23px;
   padding-right: 75px;
-  /* ...의 간격pr로 주기  */
   white-space: nowrap;
-  /* whs 글자 아래로 떨어짐 방지*/
   overflow: hidden;
-  /* 글자가 넘치는건 숨겨라 */
   text-overflow: ellipsis;
-  /* 글자 넘어갈 시 ...으로 원으로 만들어라 */
-
 }
-#container .main-tabmenu-wrap>div>ul>li:before {
+#container .main-tabmenu-wrap > div > ul > li:before {
   content: '';
   position: absolute;
   left: 12px;
@@ -240,14 +203,12 @@ body {
   height: 3px;
   background-color: #ff5d2b;
   border-radius: 50%;
-  
 }
-#container .main-tabmenu-wrap>div>ul>li>span {
+#container .main-tabmenu-wrap > div > ul > li > span {
   position: absolute;
   top: 0;
   right: 0;
 }
-
 
 #container .main-tabmenu-wrap .btn-more {
   position: absolute;
@@ -255,159 +216,130 @@ body {
   right: 22px;
 }
 
-
 #container .main-gallery-wrap {
-  clear:both;
-  /* float해제 */
-  /* margin-top: 38px; float되어있는 떠있는 성질이라 마진 안먹힘*/
+  clear: both;
   padding-top: 38px;
 }
-#container .main-gallery-wrap>ul {
+#container .main-gallery-wrap > ul {
   overflow: hidden;
-  /* 이런 방법도 float해제 */
-  /* clear:both주면 두명아기사진 li의 요소들 
-  다음에 오는 요소가 없고, 
-  부모에 줄떈 오버플로우 히든을 줘야 플롯이 해제됨 
-  또는 가상요소를 줘야함 */
 }
-#container .main-gallery-wrap>ul>li {
+#container .main-gallery-wrap > ul > li {
   float: left;
-   /* fl */
-  width:23.21428571428571%; /*234px*/
-  /* (234/1008 li의 부모 기준)*100 */
+  width: 23.21428571428571%; /*234px*/
   margin-left: 2.380952380952381%; /*24px;*/
   /* (24/1008)*100 */
-
 }
-#container .main-gallery-wrap>ul>li:first-child {
+#container .main-gallery-wrap > ul > li:first-child {
   margin-left: 0;
 }
-#container .main-gallery-wrap>ul>li>p+p {
-  margin-top: 9.401709401709402%  /*22px;*/
+#container .main-gallery-wrap > ul > li > p + p {
+  margin-top: 9.401709401709402%; /*22px;*/
   /* 22/234*100 */
-
 }
 #footer {
   background-color: #fff;
 }
 
-#footer .inner-footer{
+#footer .inner-footer {
   max-width: 1008px;
   margin: 0 auto;
   padding: 25px 18px;
 }
 
-
-*[class*="mobile-"] {
+*[class*='mobile-'] {
   display: none;
-  /* pc버전에선 숨기고 */
 }
 
-@media (min-width:721px) {
+@media (min-width: 721px) {
   #gnb {
     position: absolute;
     top: 137px;
     left: 0;
     width: 100%;
-    /* background-color: #ff0; */
     height: 47px;
-    /* mouseleave로 할땐 붙어있어야 마우스 호버 시 안사라지고 벗어나야 사라짐  */
   }
   #gnb ul {
-    display:none;
-    /* 서브메뉴 gnb작업동안만 display:none으로 해놓고 작업 */
+    display: none;
     position: absolute;
     left: 0;
     top: 42px;
   }
-  
-  #gnb ul >li {
+
+  #gnb ul > li {
     float: left;
     margin-left: 15px;
   }
-  #gnb ul >li:first-child {
+  #gnb ul > li:first-child {
     margin-left: 16px;
-    /* 첫번째 submenu1-1 ml값 필요없으니까 0 */ 
-    
   }
-  
-  #gnb>li:nth-child(1) ul{
+
+  #gnb > li:nth-child(1) ul {
     /* display:block; */
-    
   }
-  #gnb>li:nth-child(2) ul{
+  #gnb > li:nth-child(2) ul {
     /* display:block; */
-    left:319px;
+    left: 319px;
   }
-  #gnb>li:nth-child(3) ul{
+  #gnb > li:nth-child(3) ul {
     /* display:block; */
-    left:600px;
+    left: 600px;
   }
-  #gnb>li:nth-child(4) ul{
+  #gnb > li:nth-child(4) ul {
     /* display:block; */
-    left:auto;
-    /* 위에 left값 0을 줘서, rigth:0아래에 주면 충돌일어나니까 auto값으로 지정 */
-    right:0px;
+    left: auto;
+    right: 0px;
   }
-  #gnb>li {
-    float:left;
+  #gnb > li {
+    float: left;
     width: 25%;
-    /* gnb대메뉴에 width100%줘야 25%가 적용됨 */
   }
-  /* 1280px화면에 메뉴바가 많을땐 반응형 - 햄버거버튼으로 바꾸기 */
-  /* 태블릿 버전 1280 or 1024px에 맞추기 */
-  
-  #gnb>li> a {
+
+  #gnb > li > a {
     font-size: 18px;
     font-weight: bold;
     color: #fff;
     letter-spacing: -0.025em;
     display: block;
-    /* display:block너비값 100% */
     text-align: center;
   }
-  
-  #gnb>li:nth-child(1)>a {
+
+  #gnb > li:nth-child(1) > a {
     text-align: left;
     padding-left: 6.746031746031746%; /*17px;*/
     /* (17/252)*100 %값구하기 */
   }
-  #gnb>li:nth-child(2)>a {
+  #gnb > li:nth-child(2) > a {
     text-align: left;
-    padding-left: 25.79365079365079%;/*65px;*/
+    padding-left: 25.79365079365079%; /*65px;*/
   }
-  #gnb>li:nth-child(3)>a {
+  #gnb > li:nth-child(3) > a {
     text-align: right;
-    padding-right: 13.0952380952381 /*33px;*/
+    padding-right: 13.0952380952381; /*33px;*/
     /* pr33 */
   }
-  #gnb>li:nth-child(4)>a {
+  #gnb > li:nth-child(4) > a {
     text-align: right;
-    padding-right: 6.746031746031746%;  /*17px;*/
-    /* margin으로 주면 반응형시, 공간이 없어서 글자가 밑으로 떨어짐 */
+    padding-right: 6.746031746031746%; /*17px;*/
   }
-  
-  #gnb>li>a.on+ul {
-    display:block;
+
+  #gnb > li > a.on + ul {
+    display: block;
     /* about밑에 서브메뉴 */
   }
 }
 /* min-width(720px 이상에서) 
 max-width:720px(720px 이하에서)*/
-@media (max-width:720px) {
-  *[class*="mobile-"] {
+@media (max-width: 720px) {
+  *[class*='mobile-'] {
     display: block;
   }
-    /* 모든 요소에 class명 앞에 mobile이라고 되어 있는 모든 class를 숨겨라 */
-  /* 순서 - pc버전은 위에 -> 모바일버전은 밑으로 위에있는게 우선순위  */
 
   /* @media (min-width:721px) {
   *[class*="mobile-"] {
     display: none; pc버전용
-  } 아래에 작성하고 싶으면 이렇게 해야하지만 굳이 이렇게 하지말고 위의 주석처리 안한 형태로 사용*/ 
+  } 아래에 작성하고 싶으면 이렇게 해야하지만 굳이 이렇게 하지말고 위의 주석처리 안한 형태로 사용*/
   body {
     background: none;
-    /* 주황색 gnb띠 없애기 */
     background-color: #fff7e6;
   }
   #header {
@@ -419,9 +351,8 @@ max-width:720px(720px 이하에서)*/
   }
   .mobile-btn-gnb-open {
     position: absolute;
-    /* position은 인라인요소로 바뀜 */
-    top:38px;
-    right:10px;
+    top: 38px;
+    right: 10px;
     width: 50px;
     height: 50px;
     border: 1px solid #b68c60;
@@ -434,16 +365,13 @@ max-width:720px(720px 이하에서)*/
     width: 36px;
     height: 1px;
     background-color: #b68c60;
-    /* 햄버거 버튼 모양 만들기 */
     position: absolute;
     top: 22px;
     left: 50%;
-    /* 겉에 테두리안에서 위와 왼쪽 50%차지 */
     margin-left: -18px;
-    /* width값의 절반만큼 좌측으로 이동 */
   }
   .mobile-btn-gnb-open::before {
-    top:36px;
+    top: 36px;
   }
   .mobile-btn-gnb-open::after {
     top: 8px;
@@ -462,17 +390,15 @@ max-width:720px(720px 이하에서)*/
     width: 100%;
     height: 100%;
     background-color: #ff5d2b;
-    color:#fff;
+    color: #fff;
     z-index: 100;
     padding-top: 60px;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
   }
 
   .gnb-wrap .scroll-wrap {
     height: 100%;
-    /* height값 꼭 넣어줘야함 (스크롤랩) */
     overflow-y: auto;
-    /* 내용이 넘칠때 자동으로 스크롤바 생성 */
   }
   .mobile-btn-gnb-close {
     position: absolute;
@@ -482,40 +408,34 @@ max-width:720px(720px 이하에서)*/
     height: 46px;
     background: #fff;
     border-radius: 5px;
-    /* bdrs */ 
-    box-shadow: 0 0 4px rgba(0,0,0,0.1);
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
     text-indent: -9999px;
-    /* 메뉴닫기 글자 밖으로 빠짐   */
-    
   }
   .mobile-btn-gnb-close::before,
   .mobile-btn-gnb-close::after {
     content: '';
     position: absolute;
-        /* gnb에 position:fixed를 해놔서 relative안해줘도됨 */
     top: 50%;
     left: 50%;
     width: 40px;
     height: 2px;
     background-color: #ff5d2b;
   }
-  .mobile-btn-gnb-close::before{
+  .mobile-btn-gnb-close::before {
     transform: translate(-50%, -50%) rotate(45deg);
   }
   .mobile-btn-gnb-close::after {
     transform: translate(-50%, -50%) rotate(-45deg);
   }
-  #gnb>li>a {
+  #gnb > li > a {
     font-size: 20px;
     display: block;
-    /* db */
-    /* text-align: center; 서브메뉴 펼쳐질것생각해서 좌측정렬*/
     padding: 18px 15px;
     border-bottom: 1px solid #fba186;
     position: relative;
   }
-  #gnb>li>a::before,
-  #gnb>li>a::after {
+  #gnb > li > a::before,
+  #gnb > li > a::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -524,41 +444,38 @@ max-width:720px(720px 이하에서)*/
     height: 2px;
     background-color: #fff;
   }
-  #gnb>li>a::after {
+  #gnb > li > a::after {
     transform: rotate(90deg);
   }
-  #gnb>li>a.on+ul {
-    /* display: block; */
+  #gnb > li > a.on + ul {
     max-height: 500px;
   }
-  #gnb>li>a.on:after {
+  #gnb > li > a.on:after {
     content: none;
     /* +기호 클릭시, -로 변환 */
   }
   #gnb ul {
-    /* display: none; */
-    /* 서브메뉴 숨기기 */
     background-color: #fba186;
-    color:#333;
+    color: #333;
     font-size: 17px;
-    transition: all .3s ease-in;
+    transition: all 0.3s ease-in;
     max-height: 0;
     overflow: hidden;
   }
-  #gnb ul>li>a {
+  #gnb ul > li > a {
     display: block;
     padding: 15px 15px 15px 30px;
     border-bottom: 1px solid #fff;
   }
-  #gnb ul>li:last-child>a {
+  #gnb ul > li:last-child > a {
     border-bottom: none;
   }
   #container {
     padding: 0 10px;
   }
-  #container .main-slide-banner-wrap{
+  #container .main-slide-banner-wrap {
     width: auto;
-    float:none;
+    float: none;
     margin-bottom: 38px;
   }
 
@@ -567,26 +484,23 @@ max-width:720px(720px 이하에서)*/
   }
   #container .main-slide-banner-wrap .gallery-wrap img {
     max-width: none;
-    /* 원본 사이즈보다 늘어나지 않게 하도록 max-width값을 지운것 */
     width: 100%;
   }
-  #container .main-tabmenu-wrap{
+  #container .main-tabmenu-wrap {
     width: auto;
-    float:none;
+    float: none;
   }
-  #container .main-gallery-wrap>ul>li {
+  #container .main-gallery-wrap > ul > li {
     margin-left: 0;
     width: 50%;
-    /* 아래의 사진들 2단으로 떨어짐 */
     text-align: center;
     padding: 10px;
-    /* 이미지들끼리의 간격  */
   }
-  #container .main-gallery-wrap>ul>li:nth-child(3) {
-    clear:both;
+  #container .main-gallery-wrap > ul > li:nth-child(3) {
+    clear: both;
   }
   #footer {
-    text-align:center;
+    text-align: center;
   }
   #footer .footer-info-1 {
     display: none;
