@@ -337,7 +337,7 @@ max-width:720px(720px 이하에서)*/
   /* @media (min-width:721px) {
   *[class*="mobile-"] {
     display: none; pc버전용
-  } 아래에 작성하고 싶으면 이렇게 해야하지만 굳이 이렇게 하지말고 위의 주석처리 안한 형태로 사용*/
+  } */
   body {
     background: none;
     background-color: #fff7e6;

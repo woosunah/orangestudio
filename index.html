@@ -13,19 +13,13 @@
     <script src="js/jquery.js"></script>
     <script src="js/jquery.bxslider.js"></script>
     <script src="js/common.js"></script>
-    <!-- 플로그인 사용시, 제이쿼리 사용해서 항상 제이쿼리 밑에다가 사용하기 -->
     <title>Orange Studio</title>
   </head>
   <body>
-    <!-- #wrap+footer#footer>.inner-footer -->
-    <!-- "+"는 다음이란 뜻, wrap다음에 footer/ 한 페이지에서 footer가 여러번 나올 수 있어서, footer태그에 또 이름 중복으로 넣음 -->
     <div id="wrap">
       <div class="skipmenu">
         <a href="#container">본문바로가기</a>
       </div>
-      <!-- <div class="skipmenu">
-    <a href="#gnb">주메뉴바로가기</a>
-  </div> 본문 바로가기만 넣으면 웹접근성에 문제없음-->
       <header id="header">
         <h1 class="logo">
           <a href="#"
@@ -41,17 +35,12 @@
           <li><a href="#">Member</a></li>
           <li><a href="#">Sitemap</a></li>
         </ul>
-        <!-- <a href="#" class="mobile-btn-gnb-open"> -->
         <a
           href="#"
           class="mobile-btn-gnb-open"
           onclick="this.classList.toggle('on')"
-        >
-          <!-- 클릭할 a요소 / .으로 접근은 객체 / 함수는() 둥근괄호 'toggle'-2가지기능하는것 'on'클래스 추가 - classList 클래스를 추가하고 삭제가능한 함수?(EX6부터나옴)-->
-          <span>메뉴열기</span>
+          ><span>메뉴열기</span>
         </a>
-        <!-- span태그로 감싼 이유는 ? 햄버거버튼 위에 막대기위랑 아래만 만들수 있으니까 중간에도 만들려고 모양내려고span으로사용 -->
-
         <div class="gnb-wrap">
           <div class="scroll-wrap">
             <ul id="gnb">
@@ -96,7 +85,6 @@
             onclick="document.querySelector('.mobile-btn-gnb-open').classList.remove('on')"
             >메뉴닫기</a
           >
-          <!-- 클래스 제거 시, classList를 꼭 사용해야함 내장함수개념 -->
         </div>
       </header>
       <div id="container">
@@ -122,7 +110,6 @@
           </ul>
         </div>
         <div class="main-tabmenu-wrap">
-          <!-- input:radio+label+div>ul>+a(more버튼태그) -->
           <input
             type="radio"
             name="main-tabmenu-1"
@@ -132,7 +119,6 @@
           <label for="main-tabmenu-1-1">공지사항</label>
           <div>
             <ul>
-              <!-- li*7>a{공지사항 관련된 내용입니다$}+span{2020.10.26} -->
               <li>
                 <a href="#"
                   >공지사항 관련된 내용입니다1공지사항 관련된 내용입니다1</a
@@ -169,7 +155,6 @@
           <label for="main-tabmenu-1-2">이벤트</label>
           <div>
             <ul>
-              <!-- li*7>a{공지사항 관련된 내용입니다$}+span{2020.10.26} -->
               <li>
                 <a href="#">이벤트 관련된 내용입니다1</a><span>2020.10.26</span>
               </li>
